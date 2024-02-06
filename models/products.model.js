@@ -3,7 +3,7 @@ const productSchema = mongoose.Schema({
     product_name: String,
     product_category: String,
     product_price: Number,
-    product_country_of_origin: String 
+    product_country_of_origin: String,
 })
 
 productSchema.method("toJSON", function () {

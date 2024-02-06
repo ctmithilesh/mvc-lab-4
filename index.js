@@ -2,6 +2,10 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
+const ProductController = require('./controllers/product.controller')
+
+// Allows Server to accept json data 
+app.use(express.json())
 
 const db = require('./models')
 mongoose.set("strictQuery", false);
@@ -17,9 +21,11 @@ db.mongoose.connect(db.url, {
 });
 
 
+// Link Product Controller Routes to index.js
+require('./routes/product.routes')(app);
 
 
-
+// You cannot call controller with app.get() and app.post()
 app.get('/', (req, res) => {
 
     res.send('Welcome to Express Server .1.0');

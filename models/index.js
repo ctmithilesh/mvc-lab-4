@@ -15,6 +15,7 @@ db.url = dbConfig.url
 
 // create a property products in the DB object 
 db.products = require('./products.model')
+db.courses = require('./courses.model')
 
 
 module.exports = db;
