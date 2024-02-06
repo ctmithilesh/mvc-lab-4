@@ -10,7 +10,16 @@ module.exports = app => {
     // Create a POST route to controller using express Router
     router.post('/product/add', ProductController.create);
 
+    // Get all Products 
+    router.get('/product/all', ProductController.findAll)
 
+    // Get Product by ID 
+    router.get('/product/:id', ProductController.findOne)
+
+    // Delete All Products
+    router.delete('/product/delete/all', ProductController.deleteAll)
+
+    // prefix 
     app.use('/api', router)
 }
 
